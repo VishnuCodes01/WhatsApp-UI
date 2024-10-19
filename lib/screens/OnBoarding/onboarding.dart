@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../widgets/ui_helper.dart';
+import '../Login/loginscreen.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -77,7 +78,14 @@ class OnboardingScreen extends StatelessWidget {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: UiHelper.CustomButoon(
-        callback: () {},
+        callback: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => const LoginScreen(),
+            ),
+          );
+        },
         buttonName: 'Agree and continue',
       ),
     );
