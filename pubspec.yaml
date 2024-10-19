@@ -1,0 +1,37 @@
+name: whui
+description: "A new Flutter project."
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^4.0.0
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/images/
+
+  # list giving the asset and other descriptors for the font.
+  fonts:
+    - family: Regular
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
