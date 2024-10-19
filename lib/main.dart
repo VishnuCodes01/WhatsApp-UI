@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'screens/Splash/splashscreen.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -11,13 +13,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'WhatsApp',
-      debugShowCheckedModeBanner: true,
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0XFF00A884)),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFF00A884),
+        ),
         useMaterial3: false,
         fontFamily: "Regular",
       ),
-      home: Scaffold(),
+      home: const SplashScreen(),
     );
   }
 }
