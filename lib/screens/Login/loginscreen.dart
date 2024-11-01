@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:whui/widgets/ui_helper.dart';
+
+import '../../widgets/ui_helper.dart';
+import '../OTP/otpscreen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -26,6 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
     final mq = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         elevation: 0,
         backgroundColor: CupertinoColors.white,
         title: UiHelper.CustomeText(
@@ -152,15 +155,30 @@ class _LoginScreenState extends State<LoginScreen> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: UiHelper.CustomButoon(
         callback: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (_) => const Scaffold(),
-            ),
-          );
+          login(phoneController.text.toString());
         },
         buttonName: 'Next',
       ),
     );
+  }
+
+  login(String phoneNumber) {
+    if (phoneNumber == "") {
+      return ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          backgroundColor: Color(0xFF004511),
+          content: Text('Enter Phone Number'),
+        ),
+      );
+    } else {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (_) => OtpScreen(
+            phoneNumber: phoneNumber,
+          ),
+        ),
+      );
+    }
   }
 }
